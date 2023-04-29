@@ -16,6 +16,7 @@ spec_str = {'alw_[10, 50](abs(AF[t]-AFref[t]) < 0.1 )', ...
     'alw_[10, 48.5](ev_[0,1.5](abs(AF[t] - AFref[t]) < 0.08))', ...
     'alw_[10, 50] ( (not (abs(AF[t]-AFref[t]) > 0.08)) or (ev_[0, 2](abs(AF[t]-AFref[t]) < 0.08)))', ...
     'alw_[0,30](not(speed[t] > 50) or ev_[1,3](RPM[t] < 3000))'};
+spec_mdl = {'AFC', 'AFC', 'AFC', 'AT'};
 
 %=============write your input signals here
 FC_input = [ 14.7059   67.4300  791.2254  980.1683  585.1318; ...
@@ -44,7 +45,7 @@ AT_input = [58.2986   25.1806   29.0441   61.7091   86.2163  267.9223  319.3656 
 [FC_input_num, ~] = size(FC_input);
 [AT_input_num, ~] = size(AT_input);
 
-if spec == 4
+if strcmp(spec_mdl{spec}, 'AT')
     AT_init_warm;
     %======d=0
     claM_comp = [];
