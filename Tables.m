@@ -18,6 +18,10 @@ spec_str = {'alw_[10, 50](abs(AF[t]-AFref[t]) < 0.1 )', ...
     'alw_[0,30](not(speed[t] > 50) or ev_[1,3](RPM[t] < 3000))'};
 spec_mdl = {'AFC', 'AFC', 'AFC', 'AT'};
 
+% spec_str = {'alw_[10, 50](abs(AF[t]-AFref[t]) < 0.05 )'};
+% spec_mdl = {'AFC'};
+% spec = 1;
+
 %=============write your input signals here
 FC_input = [ 14.7059   67.4300  791.2254  980.1683  585.1318; ...
     7.3993   72.1628  905.7348  997.9803  933.5854; ...
