@@ -38,7 +38,7 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
  - Run the script in MATLAB commandline: `Tables`
    - According to the prompt, select the specification you want to check
    - According to the prompt, input the number of repeatations for each trace
-      > The data obtained in the table are based on 10 repeated executions for each trace and each specification. However, it can take quite some time to obtain the results if the repeatation number is set up to 10. Here, as we test, setting as 3 is fine.
+      > The data obtained in the table are based on 10 repeated executions for each trace and each specification. However, it can take quite some time to obtain the results if the repeatation number is set up to 10. Here, this number can be set as a smaller one to save time, but the results can suffer more from the perturbance of running environment.
    - During the running, the console displayes the running progress. 
    - After it finishes, the console will display the corresponding row in Table 1, and the corresponding sub-table in Table 2.
  
