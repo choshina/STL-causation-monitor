@@ -236,3 +236,5 @@ set(gcf,'position',[10,10,800,500])
 
 legend({'Violation causation distance','Satisfaction causation distance'});
 grid on;
+
+save2pdf('CausationOnlinePlot.pdf')   
