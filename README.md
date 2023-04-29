@@ -2,7 +2,7 @@
 This repository is for the artifact evaluation of the paper "Online Causation Monitoring of Signal Temporal Logic", accepted by CAV 2023.
 
 ***
-## Repository strucure
+## Repository structure
 
 ```
 
