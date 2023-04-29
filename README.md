@@ -18,8 +18,8 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
 - Start MATLAB GUI, set up a C/C++ compiler using the command `mex -setup`. (Refer to [here](https://www.mathworks.com/help/matlab/matlab_external/changing-default-compiler.html) for more details.)
   > Running with MATLAB in shell is also OK. 
   
-- Navigate to the project home, and run `InstallBreach`
-  > Note that we customized `InstallBreach`. It only compiles the online monitoring component. For the full functionality of Breach, please refer to [the original repository](https://github.com/decyphir/breach)
+- Navigate to the project home, and run `Install`
+
 
 ***
 
