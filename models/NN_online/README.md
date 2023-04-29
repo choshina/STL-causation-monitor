@@ -6,4 +6,4 @@ We use this neural network controller model, to illustrate how our tool can be a
 
 ## The Original Model
 
-![Original Model](/img/origin.png)
+![Original Model](img/origin.png)
