@@ -47,19 +47,46 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
  ## Usage of this tool on new problem instances
  
    ### New traces
+   The test suite of traces can be updated via the `FC_input` and `AT_input` in `Tables.m`. Note that these two variables store the input signals required in the form of the models, and your new inputs must satisfy the constraints of the input signals. 
+   
+   The meaning and constraints of each dimension in `FC_input` is as follows:
+   - `Pedal_Angle_pulse_period`: `[5 15]`
+   - `Pedal_Angle_pulse_amp`: `[50 75]`
+   - `Engine_Speed_u0`: `[900 1100]`
+   - `Engine_Speed_u1`: `[900 1100]`
+   - `Engine_Speed_u2`: `[900 1100]`
+
+   The meaning and constraints of each dimension in `AT_input` is as follows:
+   - `Throttle_u0`~`Throttle_u3`: `[0 100]`
+   - `Brake_u0`~`Brake_u3`: `[0 325]`
+   
+   One can add new inputs or change inputs, by updating the contents of these two variables. Each row represents one input.
+   
+   For example, you can change `FC_input` to be `FC_input = [10 55 1000 1000 1000];`.
    
    ### New specifications
+   New specifications can be tested, by modifying the variable of `spec_str`. One can add new specification or change the existing one in `spec_str`. Then, the variable `spec` should be used as the index of the desired specification in `spec_str`. Currently, `spec` is as per the user input; one can also hard-code the value of `spec` to make it point to the desired specification.
+   
+   The syntax of STL specification should follow the format in [Breach](https://github.com/decyphir/breach#writing-stl-requirements-in-a-file).
    
    ### New Simulink models
+   Adding new simulink models requires the users to add a new block in the user-provided Simulink models. 
+   
+   Please refer to `models/NN_online`, where there is [this instruction](models/NN_online/README.md) with the example of Neural Network Controller model for an illustration.
+   
+   To run with the example, please go to `models/NN_online/`, and run `init_NN.m`
    
  ***
 
 ## Repository structure
 
-We only show the most relevant part to this project. For other functions of Breach, please refer to the original repository.
+We only show the most relevant part to this project. For other functions of Breach, please refer to the [original repository](https://github.com/decyphir/breach) of Breach.
+
+Some relevant directories:
+- `breach/Online/include` and `breach/Online/src`: these two directories store the source code of our online causation monitoring. `onlineMonitorWrapper.cpp` is the main function of the S-function component.
+- `models`: this directory stores the Simulink models and the necessary scripts to run the tool. Specifically, `models/NN_online/` stores a neural network controller model that does not appear in the paper, for an illustration of handling new Simulink models.
 
 ```
-
 ├── Figure7a.m
 ├── Figure7b.m
 ├── Install.m
