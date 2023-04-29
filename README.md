@@ -67,9 +67,16 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
    For example, you can change `FC_input` to be `FC_input = [10 55 1000 1000 1000];`.
    
    ### New specifications
-   New specifications can be tested, by modifying the variable of `spec_str`. One can add new specification or change the existing one in `spec_str`. Then, the variable `spec` should be used as the index of the desired specification in `spec_str`. Currently, `spec` is as per the user input; one can also hard-code the value of `spec` to make it point to the desired specification.
+   New specifications can be tested, by modifying the variable of `spec_str`. One can add new specification or change the existing one in `spec_str`. Then, the variable `spec` should be used as the index of the desired specification in `spec_str`. The `spec_mdl` variable should also guarantee to have the corresponding model ID (`AFC` or `AT`) for the specification in `spec_str` with the same index. Currently, `spec` is as per the user input; one can also hard-code the value of `spec` to make it point to the desired specification.
    
    The syntax of STL specification should follow the format in [Breach](https://github.com/decyphir/breach#writing-stl-requirements-in-a-file).
+   
+   For example, you can try the following code:
+   ```
+   spec_str = {'alw_[10, 50](abs(AF[t]-AFref[t]) < 0.05 )'};
+   spec_mdl = {'AFC'};
+   spec = 1;
+   ```
    
    ### New Simulink models
    Adding new simulink models requires the users to add a new block in the user-provided Simulink models. 
