@@ -2,6 +2,104 @@
 This repository is for the artifact evaluation of the paper "Online Causation Monitoring of Signal Temporal Logic", accepted by CAV 2023.
 
 ***
+## Repository strucure
+
+```
+
+├── Figure7a.m
+├── Figure7b.m
+├── Install.m
+├── LICENSE
+├── README.md
+├── Tables.m
+├── breach
+│   ├── @STL_Formula
+│   ├── CHANGELOG.md
+│   ├── Contents.m
+│   ├── Core
+│   ├── Doc
+│   ├── Examples
+│   ├── Ext
+│   ├── InitBreach.m
+│   ├── InstallBreach.m
+│   ├── LICENSE
+│   ├── Online
+│   │   ├── Makefile
+│   │   ├── bin
+│   │   ├── experiment
+│   │   │   ├── effect_AFC.png
+│   │   │   └── effect_AT.png
+│   │   ├── include
+│   │   │   ├── FlexLexer.h
+│   │   │   ├── interval.h
+│   │   │   ├── location.hh
+│   │   │   ├── position.hh
+│   │   │   ├── robustness.h
+│   │   │   ├── signal.h
+│   │   │   ├── signal_expr.h
+│   │   │   ├── stack.hh
+│   │   │   ├── stdafx.h
+│   │   │   ├── stl_driver.h
+│   │   │   ├── stl_parser.h
+│   │   │   ├── stl_scanner.h
+│   │   │   ├── tools.h
+│   │   │   ├── transducer.h
+│   │   │   └── y.tab.h
+│   │   ├── m_src
+│   │   │   └── compile_stl_mex.m
+│   │   ├── obj
+│   │   ├── simulink_stlib
+│   │   │   ├── slblocks.m
+│   │   │   └── slstlib.slx
+│   │   └── src
+│   │       ├── Makefile_Parser
+│   │       ├── interval.cpp
+│   │       ├── interval_transducer.cpp
+│   │       ├── main.cpp
+│   │       ├── onlineMonitorWrapper.cpp
+│   │       ├── robustness.cpp
+│   │       ├── signal.cpp
+│   │       ├── signal_expr.cpp
+│   │       ├── stl_atom.cpp
+│   │       ├── stl_driver.cpp
+│   │       ├── stl_eval_mex.cpp
+│   │       ├── stl_monitor.cpp
+│   │       ├── stl_parser.cpp
+│   │       ├── stl_parser.ypp
+│   │       ├── stl_scanner.cpp
+│   │       ├── stl_scanner.lpp
+│   │       ├── tools.cpp
+│   │       ├── transducer.cpp
+│   │       └── update_transducer.cpp
+│   ├── Params
+│   ├── Plots
+│   ├── README.md
+│   └── VERSION
+├── log.txt
+└── models
+    ├── AFC_online
+    │   ├── AbstractFuelControl_M1.slx
+    │   ├── FC_init_warm.m
+    │   ├── FC_online.slx
+    │   ├── Init_BrAFC.m
+    │   ├── plot_examples.m
+    │   └── settling_spec.stl
+    ├── Autotrans_online
+    │   ├── AT_init_warm.m
+    │   ├── Autotrans.slx
+    │   ├── Autotrans_online.mdl
+    │   ├── autotrans_signal_builder.slx
+    │   ├── init_monitor.m
+    │   ├── test_falsify.m
+    │   └── test_falsify_online.m
+    ├── NN_online
+    │   ├── NN_online.slx
+    │   └── init_NN.m
+    └── random_gen
+        └── random_gen.slx
+```
+
+***
 
 ## System requirement
 
