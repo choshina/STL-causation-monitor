@@ -11,7 +11,7 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
 
 ## Installation of our tool:
 
-- Clone the repository, via `https://github.com/choshina/STLCausationMonitor.git`
+- Clone the repository, via `https://github.com/choshina/STL-causation-monitor.git`
   
   > Alternatively, you can download this repository via the URL: .
 
