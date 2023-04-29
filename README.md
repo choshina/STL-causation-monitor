@@ -27,9 +27,11 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
 
  ### Reproduce Figure 7a:
  - Run the script in MATLAB commandline: `Figure7a`
+ - The figure will be shown, and also will be stored as a pdf.
  
  ### Reproduce Figure 7b:
  - Run the script in MATLAB commandline: `Figure7b`
+ - The figure will be shown, and also will be stored as a pdf.
  
  ### Reproduce Table 1 and Table 2:
  
