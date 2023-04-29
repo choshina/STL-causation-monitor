@@ -74,7 +74,7 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
    ### New Simulink models
    Adding new simulink models requires the users to add a new block in the user-provided Simulink models. 
    
-   Please refer to `models/NN_online`, where there is [this instruction](models/NN_online/README.md) with the example of Neural Network Controller model for an illustration.
+   Please refer to `models/NN_online`, where there is [this instruction](https://github.com/choshina/STL-causation-monitor/blob/main/models/NN_online/README.md) with the example of Neural Network Controller model for an illustration.
    
    To run with the example, please go to `models/NN_online/`, and run `init_NN.m`
    
