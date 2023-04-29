@@ -262,7 +262,7 @@ if strcmp(spec_mdl{spec}, 'AT')
     disp('==========Table2:');
     disp(table2);
 
-else
+elseif strcmp(spec_mdl{spec}, 'AFC')
     FC_init_warm;
     %======d=0
     claM_comp = [];
@@ -472,6 +472,8 @@ else
 
     disp('==========Table2:');
     disp(table2);
+else
+    disp('Please check the specification (spec_str and spec_mdl) again ...')
 end
 
 function init_log()
