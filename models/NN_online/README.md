@@ -46,41 +46,74 @@ We use this neural network controller model, to illustrate how our tool can be a
    - `S-function parameters` : `“SignalNames, STLString, MaxRob, Refresh, Diagnose”`
 - Lastly, complement the script and run it.
     ```
-    tic
-    for i = 1:times
-       NN.ResetSimulations();
-       NN.Sim(0:.01:30);
-    end
-    simTime = toc;
-    one_sim_time = simTime/times;
+      tic
+      for i = 1:times
+          NN.ResetSimulations();
+          NN.Sim(0:.01:20);
+      end
+      simTime = toc;
+      one_sim_time = simTime/times;
+      Trace = NN.GetTraces();
+      idx = FindParam(NN.Sys, {'rob_low', 'rob_up'});
+      t = Trace{1}.time;
 
-    Trace = NN.GetTraces();
-    idx = FindParam(NN.Sys, {'rob_low', 'rob_up'});
-    t = Trace{1}.time;
+      close 
+      figure;
+      subplot(3,1,1)
+      plot(t,Trace{1}.X(6,:)', 'LineWidth', 2);
+      set(gca, 'LineWidth', 2, 'FontSize',18)
+      legend({'Pos'});
+      grid on;
+      xlim([0 20]);
+      xticks(0:5:20);
 
-    close
-    figure;
-    subplot(2,1,1)
-    plot(t,Trace{1}.X(4,:)', 'LineWidth', 2);
-    set(gca, 'LineWidth', 2, 'FontSize',18)
-    legend({'Pos'});
-    grid on;
-    xlim([0 30]);
-    xticks(0:5:30);
-    g = title(phi_NN);
-    set(g,'Interpreter','None')
-    subplot(2,1,2);
-    hold on;
+      g = title(phi_NN);
+      set(g,'Interpreter','None')
 
-    stairs(t, Trace{1}.X(idx(2),:)', 'LineWidth', 2);
-    stairs(t, Trace{1}.X(idx(1),:)', 'LineWidth', 2);
-    xlim([0 20]);
-    xticks(0:5:20);
-    ylim([-max_rob max_rob]);
-    set(gca, 'LineWidth', 2, 'FontSize',18)
-    set(gcf,'position',[10,10,800,500])
-    legend({'Upper robustness','Lower robustness'});
-    grid on;
+      subplot(3,1,2);
+      hold on;
+      stairs(t, Trace{1}.X(idx(2),:)', 'LineWidth', 2);
+      stairs(t, Trace{1}.X(idx(1),:)', 'LineWidth', 2);
+      xlim([0 20]);
+      xticks(0:5:20);
+      ylim([-max_rob max_rob]);
+      set(gca, 'LineWidth', 2, 'FontSize',18)
+      set(gcf,'position',[10,10,800,500])
+      legend({'Upper robustness','Lower robustness'});
+      grid on;
+      gg = title("ClaM");
+      set(gg,'Interpreter','None')
+
+      subplot(3,1,3);
+      hold on;
+      d = 4;
+      diagnoser = d;
+      times = 1;
+      NN.SetParam({'Ref_u0', 'Ref_u1', 'Ref_u2', 'Ref_u3'}, input);
+      NN.SetParam({'max_rob', 'diagnoser'}, [max_rob, d]);
+      tic
+      for i = 1:times
+          NN.ResetSimulations();
+          NN.Sim(0:.01:20);
+      end
+      simTime = toc;
+      one_sim_time = simTime/times;
+      Trace = NN.GetTraces();
+      idx = FindParam(NN.Sys, {'rob_low', 'rob_up'});
+      t = Trace{1}.time;
+      stairs(t, Trace{1}.X(idx(2),:)', 'LineWidth', 2);
+      stairs(t, Trace{1}.X(idx(1),:)', 'LineWidth', 2);
+      xlim([0 20]);
+      xticks(0:5:20);
+      ylim([-max_rob max_rob]);
+      set(gca, 'LineWidth', 2, 'FontSize',18)
+      set(gcf,'position',[10,10,800,500])
+      
+      legend({'Violation causation distance','Satisfaction causation distance'});
+      grid on;
+
+      ggg = title("QCauM");
+      set(ggg,'Interpreter','None')
     ```
 
 ## The model after modification
