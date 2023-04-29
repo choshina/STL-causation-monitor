@@ -75,6 +75,9 @@ set(gcf,'position',[10,10,800,500])
 legend({'Upper robustness','Lower robustness'});
 grid on;
 
+gg = title("ClaM");
+set(gg,'Interpreter','None')
+
 %============== d=4 ===================
 
 subplot(3,1,3);
@@ -114,3 +117,6 @@ set(gcf,'position',[10,10,800,500])
 
 legend({'Violation causation distance','Satisfaction causation distance'});
 grid on;
+
+ggg = title("QCauM");
+set(ggg,'Interpreter','None')
