@@ -83,7 +83,7 @@ This repository is for the artifact evaluation of the paper "Online Causation Mo
    
    Please refer to `models/NN_online`, where there is [this instruction](https://github.com/choshina/STL-causation-monitor/blob/main/models/NN_online/README.md) with the example of Neural Network Controller model for an illustration.
    
-   To run with the example, please go to `models/NN_online/`, and run `init_NN.m`
+   To run with the example, please go to `models/NN_online/`, and run `init_NN`
    
  ***
 
