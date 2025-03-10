@@ -1,5 +1,9 @@
+## Please refer to [this repo](https://github.com/choshina/EfficientCausationMonitor) for the latest implementation.
+
 # Online Causation Monitoring of Signal Temporal Logic
 This repository is for the artifact evaluation of the paper "Online Causation Monitoring of Signal Temporal Logic", accepted by CAV 2023.
+
+
 
 ***
 
